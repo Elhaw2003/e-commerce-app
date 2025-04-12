@@ -16,6 +16,7 @@ class ECommerceApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
+
         );
       },
     );

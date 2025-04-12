@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/routing/router_generation_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,9 +15,9 @@ class ECommerceApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-
+          routerConfig: RouterGenerationConfig.goRouter,
         );
       },
     );

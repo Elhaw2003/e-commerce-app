@@ -5,7 +5,7 @@ class AppTexts{
   static const String enterYourEmailAddress = "Enter your email address";
   static const String signIn = "Sign In";
   static const String dontHaveAnAccount = "Don’t have an account?";
-  static const String  join = "Join";
+  static const String  join = " Join";
   static const String  enterYourPassword = "Enter your password";
   static const String  password = "Password";
 }

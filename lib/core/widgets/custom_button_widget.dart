@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/utilities/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +26,7 @@ class CustomButtonWidget extends StatelessWidget {
           backgroundColor: WidgetStatePropertyAll(buttonColor),
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(10.r),
               side: BorderSide(color: borderColor),
             ),
           ),
@@ -33,11 +34,7 @@ class CustomButtonWidget extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: TextStyle(
-              color: titleColor,
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600
-          ),
+          style: AppTextStyle.whiteW500Size14
         ),
     );
   }

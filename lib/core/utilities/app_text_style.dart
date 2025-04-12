@@ -19,4 +19,9 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
     fontSize: 16.sp
   );
+  static TextStyle whiteW500Size14 = GoogleFonts.dmSans(
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.w500,
+    fontSize: 16.sp
+  );
 }

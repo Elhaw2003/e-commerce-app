@@ -22,7 +22,6 @@ class CustomTextFieldWidget extends StatelessWidget {
       obscureText: obscureText?? false,
       cursorColor: AppColors.primaryColor,
       decoration: InputDecoration(
-        isDense: true,
         contentPadding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 15.h),
         hintText: hintText,
         hintStyle: GoogleFonts.readexPro(

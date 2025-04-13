@@ -9,14 +9,15 @@ import 'package:e_commerce_app/features/auth/widgets/rich_text_widget.dart';
 import 'package:e_commerce_app/features/auth/widgets/title_and_text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../../core/routing/app_routes.dart';
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
   @override
   State<LoginBody> createState() => _LoginBodyState();
 }
-bool obscureText = false;
+bool obscureText = true;
 
 class _LoginBodyState extends State<LoginBody> {
   TextEditingController emailController = TextEditingController();
@@ -84,7 +85,15 @@ class _LoginBodyState extends State<LoginBody> {
               height: 50.h
           ),
           const Spacer(),
-          const Center(child: RichTextWidget(firstText: AppTexts.dontHaveAnAccount, secondText: AppTexts.join)),
+           Center(
+             child: RichTextWidget(
+              firstText: AppTexts.dontHaveAnAccount,
+              secondText: AppTexts.join,
+               onTap: (){
+                 GoRouter.of(context).pushNamed(AppRoutes.registerScreen);
+               },
+          ),
+          ),
           const HeightSpacing(height: 10)
         ],
       ),

@@ -1,8 +1,9 @@
 import 'package:e_commerce_app/core/routing/app_routes.dart';
 import 'package:e_commerce_app/features/auth/login/presentation/view/login_screen.dart';
 import 'package:e_commerce_app/features/auth/register/presentation/view/register_screen.dart';
-import 'package:e_commerce_app/features/home/presentation/view/home_screen.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../features/main_home/presentation/view/main_home_screen.dart';
 
 class RouterGenerationConfig{
   static GoRouter goRouter = GoRouter(
@@ -19,9 +20,9 @@ class RouterGenerationConfig{
             builder: (context, state) => const RegisterScreen(),
         ),
         GoRoute(
-            path: AppRoutes.homeScreen,
-            name: AppRoutes.homeScreen,
-            builder: (context, state) => const HomeScreen(),
+            path: AppRoutes.mainHomeScreen,
+            name: AppRoutes.mainHomeScreen,
+            builder: (context, state) => const MainHomeScreen(),
         ),
       ]
   );

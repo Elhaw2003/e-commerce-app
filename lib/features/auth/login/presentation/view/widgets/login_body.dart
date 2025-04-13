@@ -78,7 +78,7 @@ class _LoginBodyState extends State<LoginBody> {
           const HeightSpacing(height: 55),
           CustomButtonWidget(
             onPressed: (){
-              GoRouter.of(context).pushNamed(AppRoutes.homeScreen);
+              GoRouter.of(context).pushNamed(AppRoutes.mainHomeScreen);
             },
               title: AppTexts.signIn,
               titleColor: AppColors.whiteColor,

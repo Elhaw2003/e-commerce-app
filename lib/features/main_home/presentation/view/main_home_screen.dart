@@ -1,22 +1,19 @@
 import 'package:e_commerce_app/core/utilities/app_colors.dart';
-import 'package:e_commerce_app/core/utilities/app_text_style.dart';
-import 'package:e_commerce_app/core/utilities/app_texts.dart';
-import 'package:e_commerce_app/features/home/presentation/view/widgets/bottom_bar_widget.dart';
+import 'package:e_commerce_app/features/home_widget/presentation/view/home_screen.dart';
+import 'package:e_commerce_app/features/main_home/presentation/view/widgets/bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class MainHomeScreen extends StatefulWidget {
+  const MainHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MainHomeScreen> createState() => _MainHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _MainHomeScreenState extends State<MainHomeScreen> {
   int currentIndex = 0;
   List<Widget> screens = [
-    Container(
-      color: AppColors.redColor
-    ),
+    const HomeScreen(),
     Container(
       color: AppColors.primaryColor
     ),

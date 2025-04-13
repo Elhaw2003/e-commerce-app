@@ -5,11 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utilities/app_colors.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
-  const CustomTextFieldWidget({super.key, required this.hintText, this.suffixIcon,this.obscureText, required this.controller, this.validator, required this.keyboardType});
+  const CustomTextFieldWidget({super.key, required this.hintText, this.suffixIcon,this.obscureText, required this.controller, this.validator, required this.keyboardType, this.prefixIcon});
   final String hintText;
   final String? Function(String?)? validator;
   final TextEditingController controller;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final bool? obscureText;
   final TextInputType keyboardType;
   @override
@@ -50,7 +51,8 @@ class CustomTextFieldWidget extends StatelessWidget {
             color: AppColors.redColor,
             height: 1.h,
           ),
-        suffixIcon: suffixIcon
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
       ),
     );
   }

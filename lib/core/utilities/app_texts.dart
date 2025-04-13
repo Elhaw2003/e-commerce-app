@@ -14,6 +14,9 @@ class AppTexts{
   static const String  createAnAccount = "Create an account";
   static const String  letsCreateYourAccount = "Let’s create your account.";
   static const String  logIn = " Log In";
+  static const String  home = "Home";
+  static const String  cart = "Cart";
+  static const String  account = "Account";
   static const String  alreadyHaveAnAccount = "Already have an account?";
   static const String  password = "Password";
 }

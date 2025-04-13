@@ -24,4 +24,9 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
     fontSize: 16.sp
   );
+  static TextStyle greyW500Size12 = GoogleFonts.readexPro(
+    color: AppColors.greyColor,
+    fontWeight: FontWeight.w500,
+    fontSize: 12.sp
+  );
 }

@@ -20,10 +20,12 @@ class AppTexts{
   static const String  all = "All";
   static const String  shoes = "Shoes";
   static const String  jeans = "Jeans";
+  static const String  details = "Details";
   static const String  cart = "Cart";
   static const String  account = "Account";
   static const String  discover = "Discover";
   static const String  alreadyHaveAnAccount = "Already have an account?";
   static const String  searchForClothes = "Search for clothes...";
   static const String  password = "Password";
+  static const String  addToCart = "Add to Cart";
 }

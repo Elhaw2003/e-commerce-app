@@ -25,7 +25,7 @@ class CategoriesContainerWidget extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: AppTextStyle.blackW500Size16.copyWith(color: titleColor),
+          style: AppTextStyle.blackW500Size16ReadexPro.copyWith(color: titleColor),
         )
       ),
     );

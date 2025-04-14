@@ -9,10 +9,8 @@ import '../../../../../core/utilities/app_texts.dart';
 import '../../../../../core/widgets/spacing_widget.dart';
 import '../../../data/models/category_model.dart';
 import 'category_view_widget.dart';
-
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categories = [
@@ -46,7 +44,7 @@ class HomeBody extends StatelessWidget {
         const HeightSpacing(height: 59),
         Text(
           AppTexts.discover,
-          style: AppTextStyle.blackW500Size16.copyWith(fontSize: 32),
+          style: AppTextStyle.blackW500Size16ReadexPro.copyWith(fontSize: 32),
         ),
         const HeightSpacing(height: 16),
         const SearchWidget(),

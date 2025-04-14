@@ -15,7 +15,7 @@ class TitleAndTextFieldWidget extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyle.blackW500Size16,
+          style: AppTextStyle.blackW500Size16ReadexPro,
         ),
         const HeightSpacing(height: 4),
         customTextFieldWidget,

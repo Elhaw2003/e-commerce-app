@@ -14,7 +14,12 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     fontSize: 16.sp
   );
-  static TextStyle blackW500Size16 = GoogleFonts.readexPro(
+  static TextStyle greyW400Size16DmSans = GoogleFonts.dmSans(
+    color: AppColors.greyColor,
+    fontWeight: FontWeight.w400,
+    fontSize: 16.sp
+  );
+  static TextStyle blackW500Size16ReadexPro = GoogleFonts.readexPro(
     color: AppColors.blackColor,
     fontWeight: FontWeight.w500,
     fontSize: 16.sp
@@ -24,7 +29,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
     fontSize: 14.sp
   );
-  static TextStyle blackW600Size16 = GoogleFonts.dmSans(
+  static TextStyle blackW600Size16DmSans = GoogleFonts.dmSans(
     color: AppColors.blackColor,
     fontWeight: FontWeight.w600,
     fontSize: 16.sp

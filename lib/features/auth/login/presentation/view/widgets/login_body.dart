@@ -85,6 +85,7 @@ class _LoginBodyState extends State<LoginBody> {
               buttonColor: AppColors.primaryColor,
               borderColor: AppColors.primaryColor,
               width: MediaQuery.of(context).size.width,
+              textStyle: AppTextStyle.whiteW500Size14,
               height: 50.h
           ),
           const Spacer(),

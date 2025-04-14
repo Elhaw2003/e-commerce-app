@@ -29,6 +29,11 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
     fontSize: 14.sp
   );
+  static TextStyle whiteW600Size16 = GoogleFonts.readexPro(
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.w600,
+    fontSize: 16.sp
+  );
   static TextStyle blackW600Size16DmSans = GoogleFonts.dmSans(
     color: AppColors.blackColor,
     fontWeight: FontWeight.w600,

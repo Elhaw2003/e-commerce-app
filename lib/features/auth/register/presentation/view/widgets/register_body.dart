@@ -77,6 +77,7 @@ class _RegisterBodyState extends State<RegisterBody> {
                     titleColor: AppColors.whiteColor,
                     buttonColor: AppColors.primaryColor,
                     borderColor: AppColors.primaryColor,
+                    textStyle: AppTextStyle.whiteW500Size14,
                     width: MediaQuery.of(context).size.width,
                     height: 50.h),
                 const Spacer(),

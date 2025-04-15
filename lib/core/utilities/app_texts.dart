@@ -27,6 +27,8 @@ class AppTexts{
   static const String  alreadyHaveAnAccount = "Already have an account?";
   static const String  searchForClothes = "Search for clothes...";
   static const String  password = "Password";
+  static const String  address = "Address";
+  static const String  savedAddress = "Saved Address";
   static const String  goToCheckout = "Go To Checkout";
   static const String  addToCart = "Add to Cart";
   static const String  myCart = "My Cart";

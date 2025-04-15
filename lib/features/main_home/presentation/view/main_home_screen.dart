@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/utilities/app_colors.dart';
+import 'package:e_commerce_app/features/account/presentation/view/account_screen.dart';
 import 'package:e_commerce_app/features/cart/presentation/view/cart_screen.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/home_screen.dart';
 import 'package:e_commerce_app/features/main_home/presentation/view/widgets/bottom_bar_widget.dart';
@@ -16,9 +17,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   List<Widget> screens = [
     const HomeScreen(),
     const CartScreen(),
-    Container(
-      color: AppColors.greyColor
-    )
+    const AccountScreen(),
   ];
   @override
   Widget build(BuildContext context) {

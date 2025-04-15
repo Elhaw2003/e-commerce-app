@@ -30,4 +30,10 @@ class AppTexts{
   static const String  goToCheckout = "Go To Checkout";
   static const String  addToCart = "Add to Cart";
   static const String  myCart = "My Cart";
+  static const String  myOrders = "My Orders";
+  static const String  myDetails = "My Details";
+  static const String  addressBook = "Address Book";
+  static const String  fAQs = "FAQs";
+  static const String  helpCenter = "Help Center";
+  static const String  logout = "Logout";
 }

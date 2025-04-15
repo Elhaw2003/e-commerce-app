@@ -2,7 +2,13 @@
 class Assets {
   Assets._();
 
+  static const String svgImagesAddress = 'assets/svg_images/Address.svg';
+  static const String svgImagesBox = 'assets/svg_images/Box.svg';
+  static const String svgImagesDetails = 'assets/svg_images/Details.svg';
   static const String svgImagesFilter = 'assets/svg_images/filter.svg';
+  static const String svgImagesHeadphones = 'assets/svg_images/Headphones.svg';
   static const String svgImagesImage = 'assets/svg_images/image.png';
+  static const String svgImagesLogOut = 'assets/svg_images/log_out.svg';
+  static const String svgImagesQuestion = 'assets/svg_images/Question.svg';
 
 }

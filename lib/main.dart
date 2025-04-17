@@ -1,8 +1,13 @@
+import 'package:bloc/bloc.dart';
 import 'package:e_commerce_app/core/routing/router_generation_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main(){
+import 'core/services/manage_cubit_servise.dart';
+
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver();
   runApp(const ECommerceApp());
 }
 class ECommerceApp extends StatelessWidget {

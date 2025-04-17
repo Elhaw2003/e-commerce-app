@@ -38,4 +38,7 @@ class AppTexts{
   static const String  fAQs = "FAQs";
   static const String  helpCenter = "Help Center";
   static const String  logout = "Logout";
+  static const String  noInternet = "No Internet Connection";
+  static const String  loginSuccessfully = "Login Successfully";
+  static const String  errorOccurred = "Error Occurred";
 }

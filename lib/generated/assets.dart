@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String lottieLoading = 'assets/lottie/loading.json';
   static const String svgImagesAddress = 'assets/svg_images/Address.svg';
   static const String svgImagesBox = 'assets/svg_images/Box.svg';
   static const String svgImagesDetails = 'assets/svg_images/Details.svg';

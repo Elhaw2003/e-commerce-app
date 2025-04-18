@@ -41,4 +41,5 @@ class AppTexts{
   static const String  noInternet = "No Internet Connection";
   static const String  loginSuccessfully = "Login Successfully";
   static const String  errorOccurred = "Error Occurred";
+  static const String  pleaseFillThisFields = "Please Fill This Fields";
 }

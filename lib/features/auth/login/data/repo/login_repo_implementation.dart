@@ -22,13 +22,13 @@ class LoginRepoImplementation implements LoginRepo{
             "password": password
           }
       );
-      var bodyJson = jsonDecode(response.body);
       if(response.statusCode == 200){
+        var bodyJson = jsonDecode(response.body);
         LoginModel loginModel = LoginModel.fromJson(bodyJson);
         return right(loginModel);
       }
       else {
-        return left(ApiFailure(message: "username or password is incorrect"));
+        return left(ApiFailure(message: response.body));
       }
     }
     on SocketException {

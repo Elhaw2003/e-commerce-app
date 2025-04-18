@@ -14,10 +14,10 @@ class MyValidators {
     if (value!.isEmpty) {
       return 'Please enter an email';
     }
-    if (!RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
-        .hasMatch(value)) {
-      return 'Please enter a valid email';
-    }
+    // if (!RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+    //     .hasMatch(value)) {
+    //   return 'Please enter a valid email';
+    // }
     return null;
   }
   static String? phoneValidator(String? value) {
@@ -41,9 +41,9 @@ class MyValidators {
     if (value!.isEmpty) {
       return 'Please enter a password';
     }
-    if (value.length < 8) {
-      return 'Password must be at least 8 characters long';
-    }
+    // if (value.length < 8) {
+    //   return 'Password must be at least 8 characters long';
+    // }
     return null;
   }
 

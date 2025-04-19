@@ -2,11 +2,11 @@ import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/it
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../data/models/item_model.dart';
+import '../../../data/models/product_model.dart';
 
 class GridViewWidget extends StatelessWidget {
   const GridViewWidget({super.key, required this.items});
-  final List<ItemModel> items;
+  final List<ProductModel> items;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -20,7 +20,7 @@ class GridViewWidget extends StatelessWidget {
          childAspectRatio: 0.71
       ),
       itemBuilder: (context, index) {
-        return ItemGridViewWidget(itemModel: items[index]);
+        return ItemGridViewWidget(productModel: items[index]);
       },
     );
   }

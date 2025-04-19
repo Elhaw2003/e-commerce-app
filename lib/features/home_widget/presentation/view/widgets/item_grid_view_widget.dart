@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/core/routing/app_routes.dart';
-import 'package:e_commerce_app/features/home_widget/data/models/item_model.dart';
+import 'package:e_commerce_app/features/home_widget/data/models/product_model.dart';
 import 'package:e_commerce_app/features/main_home/presentation/view/widgets/image_product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,8 +10,8 @@ import '../../../../../core/widgets/spacing_widget.dart';
 import '../../../../../generated/assets.dart';
 
 class ItemGridViewWidget extends StatelessWidget {
-  const ItemGridViewWidget({super.key, required this.itemModel});
-  final ItemModel itemModel;
+  const ItemGridViewWidget({super.key, required this.productModel});
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,19 +26,19 @@ class ItemGridViewWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const ImageProductWidget(image: Assets.svgImagesImage, height: 174, width: 161),
+             ImageProductWidget(image: productModel.image, height: 174, width: 161),
             const HeightSpacing(height: 8),
             SizedBox(
               width: 140.w,
               child: Text(
                 overflow: TextOverflow.ellipsis,
-                itemModel.title,
+                productModel.title,
                 style: AppTextStyle.blackW600Size16DmSans,
               ),
             ),
             const HeightSpacing(height: 3),
             Text(
-              "\$ ${itemModel.price}",
+              "\$ ${productModel.price}",
               style: AppTextStyle.greyW500Size12,
             ),
           ],

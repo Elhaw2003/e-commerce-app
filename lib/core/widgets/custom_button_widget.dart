@@ -2,10 +2,7 @@ import 'package:e_commerce_app/core/utilities/app_text_style.dart';
 import 'package:e_commerce_app/core/widgets/spacing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../utilities/app_colors.dart';
-import '../utilities/app_texts.dart';
-
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget(
       {super.key,
@@ -18,7 +15,8 @@ class CustomButtonWidget extends StatelessWidget {
         required this.height,
         this.iconLeft,
         this.iconRight,
-        required this.textStyle
+        required this.textStyle,
+        this.borderRadius
       }
       );
   final void Function()? onPressed;
@@ -27,6 +25,7 @@ class CustomButtonWidget extends StatelessWidget {
   final Color buttonColor;
   final Color borderColor;
   final double width;
+  final double? borderRadius;
   final IconData? iconLeft;
   final IconData? iconRight;
   final double height;
@@ -40,7 +39,7 @@ class CustomButtonWidget extends StatelessWidget {
           backgroundColor: WidgetStatePropertyAll(buttonColor),
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 10.r),
               side: BorderSide(color: borderColor),
             ),
           ),

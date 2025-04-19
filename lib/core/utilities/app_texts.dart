@@ -36,6 +36,7 @@ class AppTexts{
   static const String  myDetails = "My Details";
   static const String  addressBook = "Address Book";
   static const String  fAQs = "FAQs";
+  static const String  reload = "Reload";
   static const String  helpCenter = "Help Center";
   static const String  logout = "Logout";
   static const String  noInternet = "No Internet Connection";

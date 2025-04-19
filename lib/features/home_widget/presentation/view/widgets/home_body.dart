@@ -1,8 +1,10 @@
-import 'package:e_commerce_app/features/home_widget/data/models/item_model.dart';
+import 'package:e_commerce_app/core/widgets/failure_widget.dart';
+import 'package:e_commerce_app/core/widgets/loading_widget.dart';
+import 'package:e_commerce_app/features/home_widget/presentation/controller/products/products_cubit.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/grid_view_widget.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/search_widget.dart';
-import 'package:e_commerce_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utilities/app_text_style.dart';
 import '../../../../../core/utilities/app_texts.dart';
@@ -20,24 +22,8 @@ class HomeBody extends StatelessWidget {
       CategoryModel(title: AppTexts.shoes),
       CategoryModel(title: AppTexts.hoodie),
     ];
-    List<ItemModel> items = [
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.tShirt, price: 50),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-      ItemModel(imageUrl: Assets.svgImagesImage, title: AppTexts.shoes, price: 1200),
-    ];
+    return BlocBuilder<ProductsCubit, ProductsState>(
+  builder: (context, state) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -51,9 +37,21 @@ class HomeBody extends StatelessWidget {
         const HeightSpacing(height: 16),
         CategoryViewWidget(categories: categories),
         const HeightSpacing(height: 15),
-        Expanded(child: GridViewWidget(items: items)),
+        Expanded(
+            child:state is ProductsLoading ?
+            const LoadingWidget() :
+            state is ProductsSuccess  ?
+            GridViewWidget(items: state.products) :
+            state is ProductsFailure ?
+            FailureWidget(
+              text: state.errorMessage,
+              onPressed: BlocProvider.of<ProductsCubit>(context).getProducts,) :
+             const SizedBox.shrink(),
+        ),
         const HeightSpacing(height: 8),
       ]),
     );
+  },
+);
   }
 }

@@ -20,4 +20,16 @@ class ProductsCubit extends Cubit<ProductsState> {
         }
     );
   }
+  getProductsCategories({required String category})async{
+    emit(ProductsLoading());
+    var result =await homeRepo.getProductCategory(category: category);
+    return result.fold(
+            (l){
+              emit(ProductsFailure(errorMessage: l.message));
+            },
+        (r){
+           emit(ProductsSuccess(products: r));
+        }
+    );
+  }
 }

@@ -1,5 +1,7 @@
 import 'package:e_commerce_app/core/utilities/app_text_style.dart';
+import 'package:e_commerce_app/core/utilities/app_texts.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/controller/change_selected_category/change_selected_category_cubit.dart';
+import 'package:e_commerce_app/features/home_widget/presentation/controller/products/products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +20,14 @@ class CategoriesContainerWidget extends StatelessWidget {
     return GestureDetector(
     onTap: (){
            cubit.changeCategory(index: index);
+           if(index == 0){
+             BlocProvider.of<ProductsCubit>(context).getProducts();
+           }
+           else {
+             BlocProvider.of<ProductsCubit>(context).getProductsCategories(
+                 category: title
+             );
+           }
     },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 7.h),

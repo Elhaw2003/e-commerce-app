@@ -1,6 +1,7 @@
+import 'package:e_commerce_app/core/utilities/app_colors.dart';
 import 'package:e_commerce_app/core/widgets/failure_widget.dart';
 import 'package:e_commerce_app/core/widgets/loading_widget.dart';
-import 'package:e_commerce_app/features/home_widget/presentation/controller/categories/categories_cubit.dart';
+import 'package:e_commerce_app/features/home_widget/presentation/controller/change_selected_category/change_selected_category_cubit.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/controller/products/products_cubit.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/grid_view_widget.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/search_widget.dart';
@@ -15,6 +16,7 @@ class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
   @override
   Widget build(BuildContext context) {
+    final ScrollController scrollController = ScrollController();
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, productsState) {
         return Padding(
@@ -30,13 +32,21 @@ class HomeBody extends StatelessWidget {
               const HeightSpacing(height: 16),
               const SearchWidget(),
               const HeightSpacing(height: 16),
-              CategoryViewWidget(),
+              CategoryViewWidget(scrollController: scrollController,),
               const HeightSpacing(height: 15),
               Expanded(
                 child: productsState is ProductsLoading
                     ? const LoadingWidget()
                     : productsState is ProductsSuccess
-                    ? GridViewWidget(items: productsState.products)
+                    ? RefreshIndicator(
+                  backgroundColor: AppColors.whiteColor,
+                  color: AppColors.primaryColor,
+                    onRefresh: ()async{
+                      BlocProvider.of<ChangeSelectedCategoryCubit>(context).changeCategory(index: 0);
+                      BlocProvider.of<ProductsCubit>(context).getProducts();
+                      scrollController.animateTo(0, duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+                    },
+                    child: GridViewWidget(items: productsState.products))
                     : productsState is ProductsFailure
                     ? FailureWidget(
                   text: productsState.errorMessage,

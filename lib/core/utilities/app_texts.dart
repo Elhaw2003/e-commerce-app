@@ -15,11 +15,7 @@ class AppTexts{
   static const String  letsCreateYourAccount = "Let’s create your account.";
   static const String  logIn = " Log In";
   static const String  home = "Home";
-  static const String  hoodie = "Hoodie";
-  static const String  tShirt = "Tshirts";
   static const String  all = "All";
-  static const String  shoes = "Shoes";
-  static const String  jeans = "Jeans";
   static const String  details = "Details";
   static const String  cart = "Cart";
   static const String  account = "Account";

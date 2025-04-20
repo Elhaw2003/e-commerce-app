@@ -54,6 +54,7 @@ class HomeRepoImplementation implements HomeRepo{
       var bodyJson = jsonDecode(response.body);
       if(response.statusCode == 200){
         List<String> categories = List<String>.from(bodyJson);
+        categories.insert(0, AppTexts.all);
         return right(categories);
       }
       else{

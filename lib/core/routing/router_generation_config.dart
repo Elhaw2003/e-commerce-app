@@ -9,7 +9,7 @@ import '../../features/main_home/presentation/view/main_home_screen.dart';
 
 class RouterGenerationConfig{
   static GoRouter goRouter = GoRouter(
-    initialLocation: AppRoutes.loginScreen,
+    initialLocation: AppRoutes.mainHomeScreen,
       routes:[
         GoRoute(
             path: AppRoutes.loginScreen,

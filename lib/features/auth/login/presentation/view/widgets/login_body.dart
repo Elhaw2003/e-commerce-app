@@ -64,7 +64,8 @@ class _LoginBodyState extends State<LoginBody> {
             const HeightSpacing(height: 55),
             SignInButtonWidget(
                 emailController: emailController,
-                passwordController: passwordController),
+                passwordController: passwordController
+            ),
             const HeightSpacing(height: 363),
             Center(
               child: RichTextWidget(

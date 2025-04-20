@@ -13,9 +13,9 @@ void main()async{
   Bloc.observer = MyBlocObserver();
   runApp(
     BlocProvider(
-    create: (context) => ProductsCubit(homeRepo: HomeRepoImplementation()),
-      child: const ECommerceApp()
-  ),
+      create: (context) => ProductsCubit(homeRepo: HomeRepoImplementation()),
+      child: const ECommerceApp(),
+    ),
   );
 }
 class ECommerceApp extends StatelessWidget {

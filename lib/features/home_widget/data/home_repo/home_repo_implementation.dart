@@ -30,22 +30,39 @@ class HomeRepoImplementation implements HomeRepo{
     }
   }
 
-  // @override
-  // Future<Either<Failure, List<CategoryModel>>> getCategories() async{
-  //   try{
-  //     var response = await http.get(Uri.parse(EndPoints.baseUrl + EndPoints.categories));
-  //     var bodyJson = jsonDecode(response.body);
-  //     if(response.statusCode == 200){
-  //       List<CategoryModel> categories = (bodyJson as List).map((e)=>CategoryModel.fromJson(e)).toList();
-  //       return right(categories);
-  //     }
-  //     else{
-  //       return left(ApiFailure(message: AppTexts.errorOccurred));
-  //     }
-  //   }
-  //   catch (e){
-  //     return left(ApiFailure(message: AppTexts.errorOccurred));
-  //   }
-  // }
+  @override
+  Future<Either<Failure, List<ProductModel>>> getProductCategory({required String category}) async{
+    try{
+      var response = await http.get(Uri.parse("${EndPoints.baseUrl + EndPoints.productCategory}/$category"));
+      var bodyJson = jsonDecode(response.body);
+      if(response.statusCode == 200){
+        List<ProductModel> categories = (bodyJson as List).map((e)=>ProductModel.fromJson(e)).toList();
+        return right(categories);
+      }
+      else{
+        return left(ApiFailure(message: AppTexts.errorOccurred));
+      }
+    }
+    catch (e){
+      return left(ApiFailure(message: AppTexts.errorOccurred));
+    }
+  }
+  @override
+  Future<Either<Failure, List<String>>> getCategories() async{
+    try{
+      var response = await http.get(Uri.parse(EndPoints.baseUrl + EndPoints.categories));
+      var bodyJson = jsonDecode(response.body);
+      if(response.statusCode == 200){
+        List<String> categories = List<String>.from(bodyJson);
+        return right(categories);
+      }
+      else{
+        return left(ApiFailure(message: AppTexts.errorOccurred));
+      }
+    }
+    catch (e){
+      return left(ApiFailure(message: AppTexts.errorOccurred));
+    }
+  }
 
 }

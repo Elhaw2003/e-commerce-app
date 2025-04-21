@@ -31,16 +31,14 @@ class ItemGridViewWidget extends StatelessWidget {
           children: [
              ImageProductWidget(image: productModel.image, height: 174, width: 161),
             const HeightSpacing(height: 8),
-            SizedBox(
-              width: 140.w,
-              child: Text(
-                overflow: TextOverflow.ellipsis,
-                productModel.title,
-                style: AppTextStyle.blackW600Size16DmSans,
-              ),
+            Text(
+              productModel.title,
+              maxLines: 1,
+              style: AppTextStyle.blackW600Size16DmSans,
             ),
             const HeightSpacing(height: 3),
             Text(
+              maxLines: 1,
               "\$ ${productModel.price}",
               style: AppTextStyle.greyW500Size12,
             ),

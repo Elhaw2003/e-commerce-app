@@ -9,31 +9,36 @@ class BottomBarWidget extends StatelessWidget {
   final int currentIndex;
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-
-        type: BottomNavigationBarType.fixed,
-      elevation: 0,
-      onTap: onTap,
-        currentIndex: currentIndex,
-        backgroundColor: AppColors.whiteColor,
-        selectedItemColor: AppColors.primaryColor,
-        unselectedItemColor: AppColors.greyColor,
-        selectedLabelStyle: AppTextStyle.greyW500Size12,
-        unselectedLabelStyle: AppTextStyle.greyW500Size12,
-        items:  [
-          BottomNavigationBarItem(
-            icon: BuildTabIconWidget(icon: currentIndex == 0 ? Icons.home :Icons.home_outlined, selected: currentIndex == 0),
-            label: AppTexts.home,
-          ),
-          BottomNavigationBarItem(
-            icon: BuildTabIconWidget(icon: currentIndex == 1? Icons.shopping_cart :Icons.shopping_cart_outlined, selected: currentIndex == 1),
-            label: AppTexts.cart,
-          ),
-          BottomNavigationBarItem(
-            icon: BuildTabIconWidget(icon: currentIndex == 2 ? Icons.account_circle :Icons.account_circle_outlined, selected: currentIndex == 2),
-            label: AppTexts.account,
-          ),
-        ]
+    return Theme(
+      data: ThemeData(
+        splashFactory: NoSplash.splashFactory,
+        highlightColor: Colors.transparent,
+    ),
+      child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          onTap: onTap,
+          currentIndex: currentIndex,
+          backgroundColor: AppColors.whiteColor,
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: AppColors.greyColor,
+          selectedLabelStyle: AppTextStyle.greyW500Size12,
+          unselectedLabelStyle: AppTextStyle.greyW500Size12,
+          items:  [
+            BottomNavigationBarItem(
+              icon: BuildTabIconWidget(icon: currentIndex == 0 ? Icons.home :Icons.home_outlined, selected: currentIndex == 0),
+              label: AppTexts.home,
+            ),
+            BottomNavigationBarItem(
+              icon: BuildTabIconWidget(icon: currentIndex == 1? Icons.shopping_cart :Icons.shopping_cart_outlined, selected: currentIndex == 1),
+              label: AppTexts.cart,
+            ),
+            BottomNavigationBarItem(
+              icon: BuildTabIconWidget(icon: currentIndex == 2 ? Icons.account_circle :Icons.account_circle_outlined, selected: currentIndex == 2),
+              label: AppTexts.account,
+            ),
+          ]
+      ),
     );
   }
 }

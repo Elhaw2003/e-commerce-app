@@ -10,6 +10,7 @@ class CustomAppbarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.whiteColor,
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
       title: Text(

@@ -1,12 +1,13 @@
 import 'package:e_commerce_app/core/widgets/custom_button_widget.dart';
+import 'package:e_commerce_app/features/home_widget/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utilities/app_colors.dart';
 import '../../../../../core/utilities/app_text_style.dart';
 import '../../../../../core/utilities/app_texts.dart';
 class BoxProductDetailsWidget extends StatelessWidget {
-  const BoxProductDetailsWidget({super.key});
-
+  const BoxProductDetailsWidget({super.key, required this.productModel});
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,11 +25,11 @@ class BoxProductDetailsWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                "Price",
+                AppTexts.price,
                 style: AppTextStyle.subTitleStyle,
               ),
               Text(
-                "\$ 19833",
+                "\$ ${productModel.price}",
                 style: AppTextStyle.headLineStyle,
               ),
             ],

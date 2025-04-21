@@ -17,6 +17,8 @@ class AppTexts{
   static const String  home = "Home";
   static const String  all = "All";
   static const String  details = "Details";
+  static const String  price = "Price";
+  static const String  reviews = "reviews";
   static const String  cart = "Cart";
   static const String  account = "Account";
   static const String  discover = "Discover";

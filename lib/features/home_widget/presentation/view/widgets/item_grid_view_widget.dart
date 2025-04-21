@@ -16,7 +16,10 @@ class ItemGridViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        context.pushNamed(AppRoutes.productDetailsScreen);
+        context.pushNamed(
+            AppRoutes.productDetailsScreen,
+          extra: productModel
+        );
       },
       child: Container(
         decoration: BoxDecoration(

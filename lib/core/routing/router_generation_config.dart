@@ -5,6 +5,7 @@ import 'package:e_commerce_app/features/auth/register/presentation/view/register
 import 'package:e_commerce_app/features/product_details/presentation/view/product_details_screen.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/home_widget/data/models/product_model.dart';
 import '../../features/main_home/presentation/view/main_home_screen.dart';
 
 class RouterGenerationConfig{
@@ -29,7 +30,12 @@ class RouterGenerationConfig{
         GoRoute(
             path: AppRoutes.productDetailsScreen,
             name: AppRoutes.productDetailsScreen,
-            builder: (context, state) => const ProductDetailsScreen(),
+            builder: (context, state) {
+              final productModel = state.extra as ProductModel;
+            return  ProductDetailsScreen(
+                productModel:productModel,
+              );
+            },
         ),
         GoRoute(
             path: AppRoutes.addressScreen,

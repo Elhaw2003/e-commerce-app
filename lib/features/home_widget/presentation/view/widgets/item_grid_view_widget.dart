@@ -8,7 +8,6 @@ import '../../../../../core/utilities/app_colors.dart';
 import '../../../../../core/utilities/app_text_style.dart';
 import '../../../../../core/widgets/spacing_widget.dart';
 import '../../../../../generated/assets.dart';
-
 class ItemGridViewWidget extends StatelessWidget {
   const ItemGridViewWidget({super.key, required this.productModel});
   final ProductModel productModel;

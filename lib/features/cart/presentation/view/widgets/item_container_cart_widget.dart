@@ -4,8 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utilities/app_colors.dart';
 import '../../../../../core/utilities/app_text_style.dart';
 import '../../../../../core/widgets/spacing_widget.dart';
-import '../../../../../generated/assets.dart';
-import '../../../../main_home/presentation/view/widgets/image_product_widget.dart';
 
 class ItemContainerCartWidget extends StatelessWidget {
   const ItemContainerCartWidget({super.key});
@@ -21,7 +19,7 @@ class ItemContainerCartWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ImageProductWidget(image: Assets.svgImagesImage, height: 79, width: 83),
+           Container(width: 79,height: 83,color: AppColors.primaryColor,),
           const WidthSpacing(width: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

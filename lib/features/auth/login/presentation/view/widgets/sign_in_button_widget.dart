@@ -40,7 +40,7 @@ class SignInButtonWidget extends StatelessWidget {
               colorSnackBar: AppColors.greenColor,
               icon: Icons.check_circle
           );
-          // context.pushNamed(AppRoutes.mainHomeScreen);
+          context.pushReplacementNamed(AppRoutes.mainHomeScreen);
         }
       },
       builder: (context, state) {

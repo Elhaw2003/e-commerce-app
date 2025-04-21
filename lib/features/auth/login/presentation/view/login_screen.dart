@@ -19,14 +19,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
-  void initState() {
-    SaveStorage.getToken().then((value) {
-      if(value != null && value.isNotEmpty) {
-        context.pushReplacementNamed(AppRoutes.mainHomeScreen);
-      }
-    },
-    );
-  }
+  void initState() {}
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

@@ -8,6 +8,7 @@ import 'package:e_commerce_app/features/main_home/presentation/view/widgets/bott
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../cart/presentation/controller/cart/cart_cubit.dart';
 import '../../../home_widget/data/home_repo/home_repo_implementation.dart';
 
 class MainHomeScreen extends StatefulWidget {
@@ -39,6 +40,9 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             setState(() {
               currentIndex = value;
             });
+            if(currentIndex == 1){
+              context.read<CartCubit>().getCart();
+            }
           },
           currentIndex: currentIndex,
         ),

@@ -18,7 +18,7 @@ class CartRepoImplementation implements CartRepo {
           Uri.parse("${EndPoints.baseUrl + EndPoints.carts}/user/2"));
       var bodyJson = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        CartModel cartModel = CartModel.fromJson(bodyJson);
+        CartModel cartModel = CartModel.fromJson(bodyJson[0]);
         return right(cartModel);
       }
       else {
@@ -26,6 +26,7 @@ class CartRepoImplementation implements CartRepo {
       }
     }
     catch (e) {
+      log(e.toString());
       return left(ApiFailure(message: AppTexts.errorOccurred));
     }
   }
@@ -63,8 +64,7 @@ class CartRepoImplementation implements CartRepo {
         return left(ApiFailure(message: AppTexts.errorOccurred));
       }
     } catch (e) {
-      log(e.toString());
-      return left(ApiFailure(message: e.toString()));
+      return left(ApiFailure(message:AppTexts.errorOccurred));
     }
   }
 }

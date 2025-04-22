@@ -5,9 +5,11 @@ import 'package:e_commerce_app/features/home_widget/presentation/controller/chan
 import 'package:e_commerce_app/features/home_widget/presentation/controller/products/products_cubit.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/grid_view_widget.dart';
 import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/search_widget.dart';
+import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/shimmer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../../../core/utilities/app_text_style.dart';
 import '../../../../../core/utilities/app_texts.dart';
 import '../../../../../core/widgets/spacing_widget.dart';
@@ -36,7 +38,7 @@ class HomeBody extends StatelessWidget {
               const HeightSpacing(height: 15),
               Expanded(
                 child: productsState is ProductsLoading
-                    ? const LoadingWidget()
+                    ? const ShimmerWidget()
                     : productsState is ProductsSuccess
                     ? RefreshIndicator(
                   backgroundColor: AppColors.whiteColor,

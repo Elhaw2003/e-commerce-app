@@ -5,6 +5,7 @@ import 'package:e_commerce_app/features/home_widget/presentation/controller/prod
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_transitions/go_transitions.dart';
 
 import 'core/services/manage_cubit_servise.dart';
 
@@ -29,6 +30,15 @@ class ECommerceApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp.router(
+          theme: ThemeData(
+            pageTransitionsTheme:  const PageTransitionsTheme(
+              builders: {
+                TargetPlatform.android: GoTransitions.fade,
+                TargetPlatform.iOS: GoTransitions.fade,
+                TargetPlatform.macOS: GoTransitions.fade,
+              },
+            ),
+          ),
           debugShowCheckedModeBanner: false,
           routerConfig: RouterGenerationConfig.goRouter,
         );

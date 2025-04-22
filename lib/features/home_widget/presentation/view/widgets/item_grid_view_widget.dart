@@ -28,7 +28,9 @@ class ItemGridViewWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             ImageProductWidget(image: productModel.image, height: 174, width: 161),
+             Hero(
+                 tag: productModel.id,
+                 child: ImageProductWidget(image: productModel.image, height: 174, width: 161)),
             const HeightSpacing(height: 8),
             Text(
               productModel.title,

@@ -8,6 +8,7 @@ import 'package:e_commerce_app/features/product_details/presentation/view/produc
 import 'package:e_commerce_app/features/spalsh/view/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:go_transitions/go_transitions.dart';
 
 import '../../features/home_widget/data/models/product_model.dart';
 import '../../features/main_home/presentation/view/main_home_screen.dart';

@@ -19,7 +19,9 @@ class ProductDetailsItemWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ImageProductWidget(image: productModel.image, height: 368.53, width: double.infinity),
+          Hero(
+            tag: productModel.id,
+              child: ImageProductWidget(image: productModel.image, height: 368.53, width: double.infinity)),
           const HeightSpacing(height: 12),
           Text(
             productModel.title,

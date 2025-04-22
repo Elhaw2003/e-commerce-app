@@ -2,9 +2,7 @@ import 'package:e_commerce_app/features/home_widget/presentation/view/widgets/it
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-
 import '../../../data/models/product_model.dart';
-
 class GridViewWidget extends StatelessWidget {
   const GridViewWidget({super.key, required this.items});
   final List<ProductModel> items;

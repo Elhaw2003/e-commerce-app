@@ -11,5 +11,6 @@ class Assets {
   static const String svgImagesHeadphones = 'assets/svg_images/Headphones.svg';
   static const String svgImagesLogOut = 'assets/svg_images/log_out.svg';
   static const String svgImagesQuestion = 'assets/svg_images/Question.svg';
+  static const String svgImagesWarning = 'assets/svg_images/Warning.svg';
 
 }

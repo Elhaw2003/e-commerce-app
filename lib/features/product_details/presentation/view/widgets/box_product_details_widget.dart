@@ -64,7 +64,6 @@ class BoxProductDetailsWidget extends StatelessWidget {
                     onPressed: (){
                       context.read<CartCubit>().addToCart(productModel: productModel, quantity: 1);
                     },
-                    titleColor: AppColors.whiteColor,
                     buttonColor: AppColors.primaryColor,
                     borderColor: AppColors.primaryColor,
                     textStyle: AppTextStyle.whiteW600Size16,

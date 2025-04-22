@@ -25,7 +25,6 @@ class CartBody extends StatelessWidget {
           const HeightSpacing(height: 51),
           CustomButtonWidget(
               title: AppTexts.goToCheckout,
-              titleColor: AppColors.whiteColor,
               buttonColor: AppColors.primaryColor,
               borderColor: AppColors.primaryColor,
               textStyle: AppTextStyle.whiteW600Size16,

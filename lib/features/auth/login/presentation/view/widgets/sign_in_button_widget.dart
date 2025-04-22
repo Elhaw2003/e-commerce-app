@@ -53,7 +53,6 @@ class SignInButtonWidget extends StatelessWidget {
                       password: passwordController.text.trim());
                 },
                 title: AppTexts.signIn,
-                titleColor: AppColors.whiteColor,
                 buttonColor: AppColors.primaryColor,
                 borderColor: AppColors.primaryColor,
                 width: MediaQuery.of(context).size.width,

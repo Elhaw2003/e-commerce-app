@@ -23,7 +23,6 @@ class FailureWidget extends StatelessWidget {
             iconLeft: Icons.restart_alt,
             onPressed: onPressed,
               title: AppTexts.reload,
-              titleColor: AppColors.whiteColor,
               buttonColor: AppColors.primaryColor,
               borderColor: AppColors.primaryColor,
               width: 140,

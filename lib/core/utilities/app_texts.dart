@@ -38,6 +38,9 @@ class AppTexts{
   static const String  reload = "Reload";
   static const String  helpCenter = "Help Center";
   static const String  logout = "Logout";
+  static const String  noCancel = "No, Cancel";
+  static const String  yesLogout = "Yes, Logout";
+  static const String  areYouSureYouWantToLogout = "Are you sure you want to logout?";
   static const String  noInternet = "No Internet Connection";
   static const String  loginSuccessfully = "Login Successfully";
   static const String  errorOccurred = "Error Occurred";

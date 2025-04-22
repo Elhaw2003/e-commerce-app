@@ -8,7 +8,6 @@ class CustomButtonWidget extends StatelessWidget {
       {super.key,
       this.onPressed,
       required this.title,
-      required this.titleColor,
       required this.buttonColor,
       required this.borderColor,
         required this.width,
@@ -21,7 +20,6 @@ class CustomButtonWidget extends StatelessWidget {
       );
   final void Function()? onPressed;
   final String title;
-  final Color titleColor;
   final Color buttonColor;
   final Color borderColor;
   final double width;

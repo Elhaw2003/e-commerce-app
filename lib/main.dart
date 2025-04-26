@@ -30,6 +30,7 @@ class ECommerceApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp.router(
+          title: 'Ecommerce App',
           theme: ThemeData(
             pageTransitionsTheme:  const PageTransitionsTheme(
               builders: {

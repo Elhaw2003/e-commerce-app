@@ -6,14 +6,12 @@ class CartListViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        itemCount: 2,
-        separatorBuilder: (context, index) => const HeightSpacing(height: 20),
-        itemBuilder: (context, index) {
-          return const ItemProductCartWidget();
-        },
-      ),
+    return ListView.separated(
+      itemCount: 2,
+      separatorBuilder: (context, index) => const HeightSpacing(height: 20),
+      itemBuilder: (context, index) {
+        return const ItemProductCartWidget();
+      },
     );
   }
 }

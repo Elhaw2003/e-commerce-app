@@ -7,7 +7,9 @@ class BuildTabIconWidget extends StatelessWidget {
   final bool selected;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      curve: Curves.easeOutCirc,
+      duration: const Duration(milliseconds: 500),
       width: 75.w,
       height: 47.h,
       alignment: Alignment.center,

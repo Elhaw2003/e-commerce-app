@@ -1,8 +1,23 @@
+import 'package:bloc/bloc.dart';
+import 'package:e_commerce_app/core/routing/router_generation_config.dart';
+import 'package:e_commerce_app/features/home_widget/data/home_repo/home_repo_implementation.dart';
+import 'package:e_commerce_app/features/home_widget/presentation/controller/products/products_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_transitions/go_transitions.dart';
 
-void main(){
-  runApp(const ECommerceApp());
+import 'core/services/manage_cubit_servise.dart';
+
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver();
+  runApp(
+    BlocProvider(
+      create: (context) => ProductsCubit(homeRepo: HomeRepoImplementation()),
+      child: const ECommerceApp(),
+    ),
+  );
 }
 class ECommerceApp extends StatelessWidget {
   const ECommerceApp({super.key});
@@ -14,8 +29,19 @@ class ECommerceApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return MaterialApp.router(
+          title: 'Ecommerce App',
+          theme: ThemeData(
+            pageTransitionsTheme:  const PageTransitionsTheme(
+              builders: {
+                TargetPlatform.android: GoTransitions.fade,
+                TargetPlatform.iOS: GoTransitions.fade,
+                TargetPlatform.macOS: GoTransitions.fade,
+              },
+            ),
+          ),
           debugShowCheckedModeBanner: false,
+          routerConfig: RouterGenerationConfig.goRouter,
         );
       },
     );
